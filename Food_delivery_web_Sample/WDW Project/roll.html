@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Rolls</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .roll-option {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .roll-option label {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .buttons a{
+            text-decoration: none;
+            color:white;
+        }
+
+        .buttons button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .buttons button:hover {
+            background-color: #219150;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Roll Type</h1>
+        <form action="#" method="POST">
+            <div class="roll-option">
+                <input type="radio" id="veg-roll" name="roll-type" value="Veg Roll">
+                <label for="veg-roll">Veg Roll - <span class="price">Rs30</span></label>
+            </div>
+            <div class="roll-option">
+                <input type="radio" id="chicken-roll" name="roll-type" value="Chicken Roll">
+                <label for="chicken-roll">Chicken Roll - <span class="price">Rs70</span></label>
+            </div>
+            <div class="roll-option">
+                <input type="radio" id="paneer-roll" name="roll-type" value="Paneer Roll">
+                <label for="paneer-roll">Paneer Roll - <span class="price">Rs60</span></label>
+            </div>
+            <div class="roll-option">
+                <input type="radio" id="egg-roll" name="roll-type" value="Egg Roll">
+                <label for="egg-roll">Egg Roll - <span class="price">Rs40</span></label>
+            </div>
+            <div class="buttons">
+                <button type="submit"><a href="placeorder.html">Confirm Order</a></button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

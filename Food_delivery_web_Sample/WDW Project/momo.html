@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momo Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .momo-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .momo-option label {
+            font-size: 16px;
+        }
+        .momo-option input {
+            margin-right: 10px;
+        }
+        .confirm-btn a{
+            text-decoration: none;
+            color: white;
+        }
+        .confirm-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .confirm-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Your Momos</h1>
+        <form id="momo-form">
+            <div class="momo-option">
+                <label>
+                    <input type="checkbox" name="momo" value="Veg Momos"> Veg Momos
+                </label>
+                <span>Rs.25</span>
+            </div>
+            <div class="momo-option">
+                <label>
+                    <input type="checkbox" name="momo" value="Chicken Momos"> Chicken Momos
+                </label>
+                <span>Rs.60</span>
+            </div>
+            <div class="momo-option">
+                <label>
+                    <input type="checkbox" name="momo" value="Paneer Momos"> Paneer Momos
+                </label>
+                <span>Rs.45</span>
+            </div>
+            <div class="momo-option">
+                <label>
+                    <input type="checkbox" name="momo" value="Fried Momos"> Fried Momos
+                </label>
+                <span>Rs.35</span>
+            </div>
+            <button type="submit" class="confirm-btn"><a href="placeorder.html">Confirm Order</a></button>
+        </form>
+    </div>
+</body>
+</html>

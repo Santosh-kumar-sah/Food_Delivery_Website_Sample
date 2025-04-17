@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .pizza-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .pizza-option label {
+            font-size: 16px;
+        }
+        .pizza-option input {
+            margin-right: 10px;
+        }
+        .confirm-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .confirm-btn a{
+            text-decoration: none;
+            color: white;
+        }
+        .confirm-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Your Pizza</h1>
+        <form id="pizza-form">
+            <div class="pizza-option">
+                <label>
+                    <input type="checkbox" name="pizza" value="Margherita"> Margherita
+                </label>
+                <span>Rs50</span>
+            </div>
+            <div class="pizza-option">
+                <label>
+                    <input type="checkbox" name="pizza" value="Pepperoni"> Pepperoni
+                </label>
+                <span>Rs60</span>
+            </div>
+            <div class="pizza-option">
+                <label>
+                    <input type="checkbox" name="pizza" value="Veggie Supreme"> Veggie Supreme
+                </label>
+                <span>Rs40</span>
+            </div>
+            <div class="pizza-option">
+                <label>
+                    <input type="checkbox" name="pizza" value="BBQ Chicken"> BBQ Chicken
+                </label>
+                <span>Rs45</span>
+            </div>
+            <button type="submit" class="confirm-btn"><a href="placeorder.html">Confirm Order</a></button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Food Centre</title>
+    <link rel="stylesheet" href="home.css">
+
+    <!-- Google Maps API (Replace YOUR_API_KEY with a valid API key) -->
+    <script async defer 
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Food Centre Logo">
+        </div>
+        <h1>The Food <span>Centre</span></h1>
+        <nav class="hero-nav">
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="login.html" class="login-btn">Log in</a>
+    </header>
+
+    <section class="map-section">
+        <h2>Nearby Restaurants</h2>
+        <div id="map" style="width: 100%; height: 400px;"></div>
+    </section>
+
+    <section class="delivery-section">
+        <h2>Track Your Order</h2>
+        <p class="delivery-agent">Agent: Sarthak Sharma (+91-1234567890)</p>
+        <p class="distance-info">Delivery Status: <span id="order-status">Waiting...</span></p>
+        <button class="btn track-btn" onclick="trackOrder()">Track Your Order</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 The Food Centre</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+    </footer>
+
+    <!-- Firebase and Google Maps Integration -->
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+        // Firebase Config (Replace with your Firebase credentials)
+        const firebaseConfig = {
+            apiKey: "YOUR_FIREBASE_API_KEY",
+            authDomain: "your-project.firebaseapp.com",
+            databaseURL: "https://your-project.firebaseio.com",
+            projectId: "your-project",
+            storageBucket: "your-project.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // Track Order Status Function
+        function trackOrder() {
+            const orderStatusRef = ref(db, "orders/1234/status");
+            onValue(orderStatusRef, (snapshot) => {
+                document.getElementById("order-status").innerText = snapshot.val();
+            });
+        }
+
+        // Initialize Google Map
+        window.initMap = function () {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: { lat: 28.6139, lng: 77.2090 }
+            });
+
+            const restaurants = [
+                { name: "Pakwaan", lat: 28.6145, lng: 77.2079 },
+                { name: "Red Cafe", lat: 28.6162, lng: 77.2085 },
+                { name: "Lakeside", lat: 28.6171, lng: 77.2102 },
+                { name: "Family", lat: 28.6183, lng: 77.2114 }
+            ];
+
+            restaurants.forEach(restaurant => {
+                new google.maps.Marker({
+                    position: { lat: restaurant.lat, lng: restaurant.lng },
+                    map: map,
+                    title: restaurant.name
+                });
+            });
+        };
+    </script>
+
+</body>
+</html>

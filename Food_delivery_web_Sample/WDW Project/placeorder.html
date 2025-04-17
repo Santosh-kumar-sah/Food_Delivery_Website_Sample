@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order - The Food Centre</title>
+    <link rel="stylesheet" href="placeorder.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="The Food Centre Logo" class="logo">
+        </div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="order-container">
+        <section class="order-section">
+            <h1>Place Your Order</h1>
+            <p>Fill out the form below to place your order. We will confirm your order shortly!</p>
+
+            <form class="order-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Delivery Address:</label>
+                    <textarea id="address" name="address" rows="3" placeholder="Enter your delivery address" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="order">Order Details:</label>
+                    <textarea id="order" name="order" rows="5" placeholder="Mention the dishes you want to order..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn submit-btn"><a href="submitorder.html">Submit Order</a></button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>Email:</strong> contact@thefoodcentre.com</p>
+            <p><strong>Phone:</strong> +123-456-7890</p>
+            <p><strong>Address:</strong> 123 Food Street, Gourmet City, FC 56789</p>
+        </div>
+    </footer>
+</body>
+</html>
